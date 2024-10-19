@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings Aim</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link ke file CSS -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>SETTINGS AIM</h1>
+        <div class="subtext">WEB UI</div>
+        <div class="code">NOT YET KNOWN</div>
+
+        <div class="option">
+            <div class="option-text">Sensitivity (Width) V2</div>
+            <input type="checkbox" class="toggle" checked>
+        </div>
+
+        <div class="option">
+            <div class="option-text">Downscale Factor</div>
+            <input type="checkbox" class="toggle" checked>
+        </div>
+
+        <div class="option">
+            <div class="option-text">Touch Responsive</div>
+            <input type="checkbox" class="toggle" checked>
+        </div>
+
+        <div class="option">
+            <div class="option-text">Headtracking Adjust</div>
+            <input type="checkbox" class="toggle" checked>
+        </div>
+
+        <div class="option">
+            <div class="option-text">Tweaking FreeFire</div>
+            <input type="checkbox" class="toggle" checked>
+        </div>
+
+        <button class="button">Open Game</button>
+
+        <div class="footer">© 2024 CP | CP WEB SENSI</div>
+    </div>
+
+    <!-- Script untuk partikel salju -->
+    <script>
+        // Fungsi untuk membuat partikel salju
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.style.left = Math.random() * 100 + 'vw'; // Posisi horizontal acak
+            snowflake.style.animationDuration = Math.random() * 4 + 2 + 's'; // Durasi jatuh acak antara 2s hingga 6s
+
+            document.body.appendChild(snowflake);
+
+            // Hapus elemen salju setelah animasi selesai
+            setTimeout(() => {
+                snowflake.remove();
+            }, 6000); // Mengurangi waktu untuk menghapus salju
+        }
+
+        // Membuat partikel salju terus menerus
+        setInterval(createSnowflake, 200); // Interval lebih cepat
+    </script>
+</body>
+</html>

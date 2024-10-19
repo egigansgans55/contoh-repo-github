@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Mencegah scroll akibat partikel */
+}
+
+.container {
+    padding: 20px;
+    color: white;
+    position: relative;
+    z-index: 1;
+    width: 300px;
+    transform: translateY(-10%); /* Menggeser sedikit ke atas */
+}
+
+h1 {
+    font-size: 36px;
+    background: linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 215, 0, 1)); /* Gradien merah dan emas */
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.8); /* Efek glow */
+}
+
+.subtext {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.code {
+    font-size: 14px;
+    color: #aaaaaa;
+    margin-bottom: 30px;
+}
+
+.option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #212121, #212121);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.option-text {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.toggle {
+    appearance: none;
+    width: 50px;
+    height: 25px;
+    background-color: #333;
+    border-radius: 25px;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 21px;
+    height: 21px;
+    background-color: #bbb; /* Putih agak gelap */
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.toggle:checked {
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.7), rgba(0, 0, 255, 0.7)); /* 70% merah dan 30% biru gelap */
+}
+
+.toggle:checked:before {
+    transform: translateX(25px);
+    background-color: #bbb; /* Warna putih agak gelap tetap */
+}
+
+.button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.6), rgba(0, 0, 255, 0.6)); /* 60% merah dan 40% biru gelap */
+    background-size: 200% 100%;
+    transition: background-position 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-position: right; /* Gerakan transisi saat hover */
+    color: #ffffff;
+}
+
+.button:active {
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.8), rgba(0, 0, 255, 0.8)); /* Warna tombol aktif yang lebih kuat */
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #aaaaaa;
+}
+
+/* Styling untuk partikel salju */
+.snowflake {
+    background-color: white; /* Warna putih untuk salju */
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    z-index: 0;
+    user-select: none;
+    pointer-events: none;
+    animation: fall linear infinite;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Efek glow putih */
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
